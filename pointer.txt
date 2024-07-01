@@ -1,0 +1,88 @@
+#include <iostream>
+using namespace std;
+// Function to demonstrate call by reference (commented out for now):
+// void change(int &x, int &y){       //parameters     
+//     x = x + 1;
+//     y = y + 1;
+// }
+
+// Alternate function with different parameter names (also commented out):
+// void change(int &x1, int &y1){     
+//     x1 = x1 + 1;
+//     y1 = y1 + 1;
+// }
+
+//or
+
+void change(int *x1, int *y1){       //call by reference.
+    *x1 = *x1 + 1;
+    *y1 = *y1 + 1;
+}
+
+
+// Structure definition:
+struct Struct_name {
+    int no_ = 10;
+    string name = "navya";
+    char char_ = 'a';
+};
+
+int main() {
+    // Pointer basics:
+    // int a = 10;  
+    // cout << a << endl;        // Outputs the value of 'a'
+    // cout << &a << endl;       // Outputs the address of 'a'
+    
+    // int *ptr = &a;
+    // cout << *ptr << endl;     // Outputs the value at the address stored in 'ptr' (which is 'a')
+    
+    // Pointer to a pointer:
+    
+    // int **ptr2 = &ptr;
+    // cout << &ptr << endl;     // Outputs the address of 'ptr'
+    // cout << *ptr2 << endl;    // Outputs the value at the address stored in 'ptr2' (which is the address of 'a')
+    
+    // Pointer to an array:
+    
+    // int arr[5] = {1, 2, 5, 6, 7};
+    // cout << arr << endl;      // Outputs the address of the first element of the array (base address)
+    //cout<<arr+1<<endl;         //outputs the address of the 2nd element of the array. i.e first_elementsAddress+4
+    
+    // cout << (*arr + 1) << endl; // Outputs the value of the first element of the array + 1 (1 + 1 = 2)
+    
+    // Call by value and call by reference example (commented out for now):
+    // int x = 10, y = 4;
+    // cout << x << " " << y << endl; // Outputs: 10 4
+    
+    // change(x, y); // Would modify 'x' and 'y' if the function was defined and uncommented
+    
+    or 
+    
+    //change(&x, &y);    //call by ref //In this case we have to use * instead of & for the parameters.
+    
+    // cout << x << " " << y << endl; // Outputs: 11 5 if change() was called
+    
+    // Reference variable example:  reference is the another name of the same variable, so if we made changes in any any one then value of both will get changed
+    // int a = 40;
+    // int &b = a; // 'b' is a reference to 'a'
+    // cout << b << endl;       // Outputs: 40
+    
+    // b = b + 1;               // Increment 'b' (which also increments 'a')
+    // cout << a << endl;       // Outputs: 41
+    
+    // int &c = a; // Another reference to 'a'
+    // c = c + 1;               // Increment 'c' (which also increments 'a')
+    // cout << b << endl;       // Outputs: 42 (since 'b' and 'c' both reference 'a')
+    
+    // Pointer to a structure example (currently not used):
+    
+    Struct_name s1;
+    Struct_name *s2;
+    s2=&s1;
+    cout<<(*s2).name<<endl;
+    //or
+    cout<<s2->name<<endl;        //"->" is alternative of (*s2.)
+    
+    
+    return 0;
+}
